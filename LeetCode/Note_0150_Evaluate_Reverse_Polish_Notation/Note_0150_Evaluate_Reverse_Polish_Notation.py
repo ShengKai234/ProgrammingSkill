@@ -31,3 +31,6 @@ class Solution(object):
     
 solution = Solution()
 print(solution.evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"]))
+
+# T:O(n)
+# S:O(n)
