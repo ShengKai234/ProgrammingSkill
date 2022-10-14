@@ -117,6 +117,6 @@ if __name__ == "__main__":
 
     minHeap.add(4)
     minHeap.add(5)
-    
+
     # [4,5]
     print(minHeap)
