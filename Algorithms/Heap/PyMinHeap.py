@@ -36,3 +36,15 @@ size = len(minHeap)
 
 # The result is 2
 print("minHeap size: ", size)
+
+
+test = [[0,0],[0,1],[1,1],[1,0]]
+heap = []
+heapq.heappush(heap, test[3])
+print(heap)
+heapq.heappush(heap, test[2])
+print(heap)
+heapq.heappush(heap, test[1])
+print(heap)
+heapq.heappush(heap, test[0])
+print(heap)
