@@ -1,0 +1,57 @@
+# Union Find
+
+## compared with
+- Quick Find
+    - Array Value: Root Vertax
+    - Array Index: Vertax
+    - Time complexity: O(N)
+        ```py
+        class UnionFind:
+            def __init__(self, size):
+                self.root = [i for i in range(size)]
+
+            # O(1)
+            def find(self, x):
+                return self.root[x]
+                
+            # O(n)
+            def union(self, x, y):
+                rootX = self.find(x)
+                rootY = self.find(y)
+                if rootX != rootY:
+                    for i in range(len(self.root)):
+                        if self.root[i] == rootY:
+                            self.root[i] = rootX
+
+            # O(1)
+            def connected(self, x, y):
+                return self.find(x) == self.find(y)
+        ```
+
+- Quick Union
+    - Array Value: Parent Vertax
+    - Array Index: Vertax
+    - Time complexity: O(N)
+        ```py
+        # UnionFind class
+        class UnionFind:
+            def __init__(self, size):
+                self.root = [i for i in range(size)]
+
+            # O(n) -> only in the worst-case
+            def find(self, x):
+                while x != self.root[x]:
+                    x = self.root[x]
+                return x
+
+            # O(n), because find()
+            def union(self, x, y):
+                rootX = self.find(x)
+                rootY = self.find(y)
+                if rootX != rootY:
+                    self.root[rootY] = rootX
+
+            # O(n), because find()
+            def connected(self, x, y):
+                return self.find(x) == self.find(y)
+        ```
