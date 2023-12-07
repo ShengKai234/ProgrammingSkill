@@ -6,7 +6,7 @@ class Solution:
         adj = defaultdict(list)
         inDegree = [0] * numCourses
         for curr, pre in prerequisites:
-            adj[pre].append(curr)
+            adj[pre].append(curr)q
             inDegree[curr] += 1
         
         queue = deque([])
